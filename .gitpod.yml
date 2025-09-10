@@ -1,0 +1,8 @@
+tasks:
+  - name: Desktop
+    command: ./setup-desktop.sh
+
+ports:
+  - port: 6901
+    onOpen: open-browser
+    visibility: public
