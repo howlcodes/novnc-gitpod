@@ -1,6 +1,15 @@
+image:
+  file: .gitpod.Dockerfile
+
 tasks:
   - name: Desktop
     command: ./setup-desktop.sh
+  - name: Start VNC Desktop
+    command: |
+      vncserver -kill :1 || true
+      rm -rf /tmp/.X1-lock /tmp/.X11-unix/X1 || true
+      vncserver :1 -geometry 1920x1080 -SecurityTypes None
+    
 
 ports:
   - port: 6901
